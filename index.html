@@ -2,11 +2,107 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hola Mundo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nutrifrutbo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f7fff7;
+      color: #2d3e2f;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #58b368;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      text-align: center;
+      background: #f0f0f0;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #2d3e2f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: none;
+    }
+    footer {
+      background: #58b368;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola Mundo!</h1>
-  <p>Este es mi primer sitio web con GitHub Pages 🚀</p>
+
+<header>
+  <h1>Nutrifrutbo</h1>
+  <p>Conectando naturaleza y bienestar a través de la fruta</p>
+</header>
+
+<nav>
+  <a href="#quienes">Quiénes somos</a>
+  <a href="#productos">Productos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="quienes">
+  <h2>¿Quiénes somos?</h2>
+  <p>Nutrifrutbo es una iniciativa boliviana dedicada a ofrecer frutas saludables, frescas y naturales directamente del productor al consumidor. Nuestro compromiso es con la tierra, la salud y la sostenibilidad.</p>
+</section>
+
+<section id="productos">
+  <h2>Nuestros productos</h2>
+  <p>Contamos con una selección de frutas tropicales como mango, maracuyá, papaya, plátano y más. Cada producto es cosechado con cuidado y seleccionado por su calidad y frescura.</p>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>¿Quieres saber más sobre nuestros productos o colaborar con nosotros?</p>
+  <p><strong>Email:</strong> contacto@nutrifrutbo.com</p>
+  <p><strong>Teléfono:</strong> +591 70000000</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Nutrifrutbo. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Animación al hacer scroll (mostrar secciones suavemente)
+  const sections = document.querySelectorAll("section");
+  const options = { threshold: 0.1 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, options);
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
 </body>
 </html>
